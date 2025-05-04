@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <title>Article Management</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Article Management</a>
+
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <!-- Liens supprimés -->
+    </ul>
+
+    <!-- Si l'utilisateur est connecté, afficher le bouton Déconnexion -->
+    <div sec:authorize="isAuthenticated()">
+      <form th:action="@{/logout}" method="post" class="form-inline my-2 my-lg-0">
+        <button type="submit" class="btn btn-outline-danger btn-sm">Se déconnecter</button>
+      </form>
+    </div>
+
+    <!-- Sinon, afficher le lien de connexion -->
+    <div sec:authorize="isAnonymous()">
+      <a class="btn btn-outline-primary btn-sm" href="/login">Connexion</a>
+    </div>
+  </div>
+</nav>
+</body>
+</html>

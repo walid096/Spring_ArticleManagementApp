@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Search Articles</title>
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+</head>
+<body>
+<div th:replace="~{fragments/header}"></div> <!-- Header Fragment -->
+
+<div class="container">
+  <h2>Search Articles</h2>
+  <form th:action="@{/articles/search}" method="post">
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" id="description" name="description" class="form-control" placeholder="Search by description">
+    </div>
+    <div class="form-group">
+      <label for="minPrice">Min Price</label>
+      <input type="number" id="minPrice" name="minPrice" class="form-control" placeholder="Min Price" step="0.01">
+    </div>
+    <div class="form-group">
+      <label for="maxPrice">Max Price</label>
+      <input type="number" id="maxPrice" name="maxPrice" class="form-control" placeholder="Max Price" step="0.01">
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+</div>
+
+<div th:replace="~{fragments/footer}"></div> <!-- Footer Fragment -->
+</body>
+</html>

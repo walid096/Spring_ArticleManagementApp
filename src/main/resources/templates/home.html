@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Accueil</title>
+  <link rel="stylesheet" href="/static/bootstrap.min.css"/>
+</head>
+<body>
+<div th:replace="~{fragments/header}"></div> <!-- Header Fragment -->
+
+<div class="container mt-4">
+
+  <!-- Message de bienvenue -->
+  <h2 class="mb-3" th:text="'Bienvenue, ' + ${username} + ' !'">Bienvenue</h2>
+
+  <!-- Ligne : Créer un article + Formulaire de recherche -->
+  <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+    <a href="/articles/create" class="btn btn-success mb-2">Créer un nouvel article</a>
+
+    <form th:action="@{/home}" method="get" class="form-inline">
+      <input type="text" name="description" class="form-control form-control-sm mr-2 mb-2"
+             placeholder="Description" th:value="${description}">
+      <input type="number" name="minPrice" step="0.01" class="form-control form-control-sm mr-2 mb-2"
+             placeholder="Prix min" th:value="${minPrice}">
+      <input type="number" name="maxPrice" step="0.01" class="form-control form-control-sm mr-2 mb-2"
+             placeholder="Prix max" th:value="${maxPrice}">
+      <button type="submit" class="btn btn-primary btn-sm mb-2">Rechercher</button>
+    </form>
+  </div>
+
+  <!-- Liste des articles -->
+  <h4>Vos articles</h4>
+  <div th:if="${articles.isEmpty()}">
+    <p>Vous n'avez aucun article pour le moment.</p>
+  </div>
+
+  <table class="table table-striped" th:if="${!articles.isEmpty()}">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Description</th>
+      <th>Prix</th>
+      <th>Date d'expiration</th>
+      <th>Quantité en stock</th>
+      <th>Créé par</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="article : ${articles}">
+      <td th:text="${article.id}"></td>
+      <td th:text="${article.description}"></td>
+      <td th:text="${article.price}"></td>
+      <td th:text="${article.expirationDate}"></td>
+      <td th:text="${article.stockQuantity}"></td>
+      <td th:text="${article.creator?.username}">Inconnu</td>
+      <td>
+        <a th:href="@{/articles/edit/{id}(id=${article.id})}" class="btn btn-warning btn-sm">Modifier</a>
+        <a th:href="@{/articles/delete/{id}(id=${article.id})}" class="btn btn-danger btn-sm">Supprimer</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div th:replace="~{fragments/footer}"></div> <!-- Footer Fragment -->
+</body>
+</html>
