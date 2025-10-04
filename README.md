@@ -12,11 +12,6 @@ It includes user authentication, role-based access, and advanced search function
 ![Security](https://img.shields.io/badge/Spring%20Security-6.0-red.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-**A modern, enterprise-grade inventory management system built with Spring Boot**
-
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Available-success)](http://localhost:8081)
-[![Documentation](https://img.shields.io/badge/Documentation-Complete-blue)](README.md)
-[![Tests](https://img.shields.io/badge/Tests-Passing-green)](src/test/java)
 
 </div>
 
@@ -171,61 +166,11 @@ The **Spring Article Management App** is a comprehensive, enterprise-grade web a
 
 ## 📱 Screenshots
 
-### 🏠 **Dashboard Overview**
-![Dashboard](docs/screenshots/dashboard.png)
-*Clean, professional dashboard with article management and search capabilities*
+<img width="1905" height="650" alt="image" src="https://github.com/user-attachments/assets/50dc6313-d758-4543-b35d-0f51599fe516" />
+<img width="1912" height="884" alt="image" src="https://github.com/user-attachments/assets/66150f8a-48d6-43cb-99c5-218096e84101" />
 
-### 🔐 **Authentication**
-![Login](docs/screenshots/login.png)
-*Secure login interface with error handling*
 
-### 📝 **Article Creation**
-![Create Article](docs/screenshots/create-article.png)
-*Intuitive article creation form with validation*
 
-### 🔍 **Advanced Search**
-![Search](docs/screenshots/search.png)
-*Multi-criteria search with real-time filtering*
-
----
-
-## 🔧 API Documentation
-
-### **Authentication Endpoints**
-
-| Method | Endpoint | Description | Parameters |
-|--------|----------|-------------|------------|
-| `GET` | `/login` | Display login form | - |
-| `POST` | `/login` | Process login | `username`, `password` |
-| `GET` | `/register` | Display registration form | - |
-| `POST` | `/register` | Process registration | `username`, `email`, `password`, `confirmPassword` |
-
-### **Article Management Endpoints**
-
-| Method | Endpoint | Description | Parameters |
-|--------|----------|-------------|------------|
-| `GET` | `/home` | Main dashboard | `description`, `minPrice`, `maxPrice` (optional) |
-| `GET` | `/articles/create` | Show creation form | - |
-| `POST` | `/articles` | Create new article | `description`, `price`, `expirationDate`, `stockQuantity` |
-| `GET` | `/articles/edit/{id}` | Show edit form | `id` (path variable) |
-| `POST` | `/articles/{id}` | Update article | `id` (path variable), article data |
-| `GET` | `/articles/delete/{id}` | Delete article | `id` (path variable) |
-| `GET` | `/articles/search` | Show search form | - |
-| `POST` | `/articles/search` | Process search | `description`, `minPrice`, `maxPrice` |
-
-### **Example API Usage**
-
-```bash
-# Create a new article
-curl -X POST http://localhost:8081/articles \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "description=Laptop&price=999.99&expirationDate=2024-12-31&stockQuantity=10"
-
-# Search articles
-curl -X GET "http://localhost:8081/home?description=laptop&minPrice=500&maxPrice=1500"
-```
-
----
 
 ## 📁 Project Structure
 
@@ -300,49 +245,6 @@ curl -X GET "http://localhost:8081/home?description=laptop&minPrice=500&maxPrice
 - ✅ **Creator Tracking**: Articles are associated with their creators
 - ✅ **Secure Updates**: Creator information is preserved during updates
 
----
-
-## 🧪 Testing
-
-### **Test Coverage**
-```bash
-# Run all tests
-mvn test
-
-# Run tests with coverage report
-mvn test jacoco:report
-```
-
-### **Test Structure**
-- **Unit Tests**: Service layer business logic testing
-- **Integration Tests**: Repository and controller testing
-- **Security Tests**: Authentication and authorization testing
-- **Application Tests**: Full application context testing
-
-### **Testing Technologies**
-- **JUnit 5**: Modern testing framework
-- **Spring Boot Test**: Integration testing support
-- **Mockito**: Mocking framework for unit tests
-- **TestContainers**: Database testing (optional)
-
----
-
-## 📈 Performance
-
-### **Optimization Features**
-- ✅ **Lazy Loading**: Optimized entity relationships
-- ✅ **Query Optimization**: Efficient database queries
-- ✅ **Caching**: Thymeleaf template caching (configurable)
-- ✅ **Connection Pooling**: Database connection optimization
-- ✅ **Static Resource Optimization**: Efficient asset serving
-
-### **Performance Metrics**
-- **Startup Time**: ~3-5 seconds
-- **Response Time**: <100ms for most operations
-- **Memory Usage**: ~200MB base memory footprint
-- **Database Queries**: Optimized with proper indexing
-
----
 
 ## 🚀 Deployment
 
@@ -376,22 +278,6 @@ ENTRYPOINT ["java", "-jar", "/app.jar"]
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
-
-### **Development Guidelines**
-- Follow Java coding standards
-- Write comprehensive tests
-- Update documentation
-- Ensure all tests pass
-- Follow security best practices
 
 ---
 
@@ -412,27 +298,3 @@ We welcome contributions! Please follow these steps:
 
 </div>
 
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- **Spring Boot Team** for the amazing framework
-- **Bootstrap Team** for the responsive CSS framework
-- **MySQL Team** for the reliable database system
-- **Open Source Community** for continuous inspiration
-
----
-
-<div align="center">
-
-**⭐ If you found this project helpful, please give it a star! ⭐**
-
-Made with ❤️ using Spring Boot
-
-</div>
