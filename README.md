@@ -276,20 +276,4 @@ ENTRYPOINT ["java", "-jar", "/app.jar"]
 
 ---
 
-## 📞 Contact
-
-<div align="center">
-
-**👨‍💻 Developer: [Your Name]**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/yourprofile)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github)](https://github.com/yourusername)
-[![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:your.email@example.com)
-
-**🌐 Project Links:**
-- **Live Demo**: [http://localhost:8081](http://localhost:8081)
-- **Repository**: [GitHub Repository](https://github.com/yourusername/spring-article-management-app)
-- **Documentation**: [Full Documentation](README.md)
-
-</div>
 
