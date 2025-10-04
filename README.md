@@ -24,13 +24,8 @@ It includes user authentication, role-based access, and advanced search function
 - [🏗️ Architecture & Tech Stack](#️-architecture--tech-stack)
 - [🚀 Quick Start](#-quick-start)
 - [📱 Screenshots](#-screenshots)
-- [🔧 API Documentation](#-api-documentation)
 - [📁 Project Structure](#-project-structure)
 - [🛡️ Security Features](#️-security-features)
-- [🧪 Testing](#-testing)
-- [📈 Performance](#-performance)
-- [🤝 Contributing](#-contributing)
-- [📞 Contact](#-contact)
 
 ---
 
